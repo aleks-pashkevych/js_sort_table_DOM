@@ -22,7 +22,11 @@ const sortRows = (column) =>
     const aTrimmed = trimVal(a);
     const bTrimmed = trimVal(b);
 
-    return aTrimmed > bTrimmed;
+    if (typeof aTrimmed === 'string') {
+      return aTrimmed.localeCompare(bTrimmed);
+    }
+
+    return aTrimmed - bTrimmed;
   });
 
 const rebuildTable = (column) => {
