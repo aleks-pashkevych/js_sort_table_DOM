@@ -34,8 +34,6 @@ const rebuildTable = (column) => {
   tBody.append(...sortedRows);
 };
 
-rebuildTable(0);
-
 for (const cell of heads) {
   cell.addEventListener('click', (e) => {
     rebuildTable(e.target.cellIndex);
